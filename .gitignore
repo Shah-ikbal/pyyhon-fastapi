@@ -1,0 +1,15 @@
+   # Python cache files
+   __pycache__/
+   *.pyc
+
+   # Virtual environment
+   parspec-assignment/
+   .parspec-assignment/
+
+   # IDE specific files
+   .idea/
+   *.vscode
+
+   # Other files to ignore
+   *.log
+   *.env
