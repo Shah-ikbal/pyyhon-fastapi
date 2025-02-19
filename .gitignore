@@ -9,6 +9,7 @@
    # IDE specific files
    .idea/
    *.vscode
+   
 
    # Other files to ignore
    *.log
