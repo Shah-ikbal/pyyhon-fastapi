@@ -1,7 +1,7 @@
 # Setting up the Project
 
     # Create a virtual environment and excute the following commands
-        - python3 -m parspec-assignment venv
+        - python3 -m venv .venv
         - source parspec-assignment/bin/activate
 
     # Install the respective packages from requirements.txt file
