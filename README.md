@@ -17,7 +17,7 @@
         Locust Load Testing URL - http://localhost:8089/  
 
     Note: 
-        Will need to set up Postgress to test the application    
+        Will need to set up PostgreSQL to test the application    
 
 
 # Design Decisions and Assumption
