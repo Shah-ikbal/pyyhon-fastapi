@@ -121,26 +121,17 @@ Trade-offs:
     Real-Time Accuracy: Metrics may not reflect real-time data if the system is under heavy load.
 
 #Assumptions
-    Design Assumptions:
 
-        Small to Medium Scale: The system is designed for small to medium-scale e-commerce platforms. For larger systems, a distributed message broker (e.g., RabbitMQ, Kafka) and a more robust database setup would be required.
-        Single Instance: The application assumes a single instance of the service. For high availability, multiple instances with load balancing would be needed.
-        Simulated Processing Time: The 5-second delay in order processing is a simulation. In a real-world scenario, processing time would depend on the complexity of the order.
-        No Authentication: The API does not include authentication or authorization. In a production system, this would be essential for security.
+    #Design Assumptions:
 
-    Trade-offs Summary
-        Decision	Advantages	Trade-offs
-        FastAPI	High performance, async support, automatic docs	Learning curve, dependency on async libraries
-        PostgreSQL	Reliability, JSONB support, scalability	Setup complexity, requires tuning for high loads
-        asyncpg	High performance, async support, connection pooling	Manual SQL, learning curve
-        In-Memory Queue	Simplicity, low latency, decoupling	Not scalable, no persistence, not fault-tolerant
-        Asynchronous Processing	Scalability, efficiency, parallel processing	Complexity, requires proper error handling
-        Modular Design	Separation of concerns, reusability, scalability	Initial complexity, overhead
-        Metrics API	Monitoring, transparency, scalability insights	Performance impact, real-time accuracy
+        - Small to Medium Scale: The system is designed for small to medium-scale e-commerce platforms. For larger systems, a distributed message broker (e.g., RabbitMQ, Kafka) and a more robust database setup would be required.
+        - Single Instance: The application assumes a single instance of the service. For high availability, multiple instances with load balancing would be needed.
+        - Simulated Processing Time: The 5-second delay in order processing is a simulation. In a real-world scenario, processing time would depend on the complexity of the order.
+        - No Authentication: The API does not include authentication or authorization. In a production system, this would be essential for security.
 
-    Future Improvements
-        Use a Message Broker: Replace the in-memory queue with a distributed message broker like RabbitMQ or Kafka for better scalability and fault tolerance.
-        Add Authentication: Implement API authentication (e.g., OAuth2, JWT) to secure the endpoints.
-        Database Indexing: Add indexes to frequently queried fields (e.g., order_id, status) to improve query performance.
-        Distributed Processing: Use a task queue like Celery or RQ for distributed order processing.
-        Persistence: Persist the queue state to a database or file system to prevent data loss during crashes. 
+    #Future Improvements
+        - Use a Message Broker: Replace the in-memory queue with a distributed message broker like RabbitMQ or Kafka for better scalability and fault tolerance.
+        - Add Authentication: Implement API authentication (e.g., OAuth2, JWT) to secure the endpoints.
+        - Database Indexing: Add indexes to frequently queried fields (e.g., order_id, status) to improve query performance.
+        - Distributed Processing: Use a task queue like Celery or RQ for distributed order processing.
+        - Persistence: Persist the queue state to a database or file system to prevent data loss during crashes. 
