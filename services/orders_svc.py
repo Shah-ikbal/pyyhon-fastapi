@@ -5,8 +5,6 @@ from databases.postgresdb import get_db_connection, release_db_connection
 from models.order_models import OrderCreate, OrderStatus
 from utils.shared import order_queue
 
-# order_queue = queue.Queue()
-
 
 async def create_order(order: OrderCreate):
     conn = await get_db_connection()
@@ -27,6 +25,9 @@ async def create_order(order: OrderCreate):
         order_queue.put(order_id)
 
         return {"order_id": order_id, "status": "Pending"}
+    except Exception as e:
+        print(f"Error creating order: {e}")
+        raise HTTPException(status_code=500, detail="Internal Server Error")
     finally:
         await release_db_connection(conn)
 
@@ -41,6 +42,9 @@ async def get_all_orders():
             OrderStatus(order_id=order["order_id"], status=order["status"])
             for order in order
         ]
+    except Exception as e:
+        print(f"Error fetching orders: {e}")
+        raise HTTPException(status_code=500, detail="Internal Server Error")    
     finally:
         await release_db_connection(conn)
 
@@ -54,5 +58,8 @@ async def get_order_status(order_id: uuid.UUID):
         if not order:
             raise HTTPException(status_code=404, detail="Order not found")
         return {"order_id": order["order_id"], "status": order["status"]}
+    except Exception as e:
+        print(f"Error fetching order status: {e}")
+        raise HTTPException(status_code=500, detail="Internal Server Error")
     finally:
         await release_db_connection(conn)
