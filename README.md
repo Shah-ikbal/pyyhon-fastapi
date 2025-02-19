@@ -13,6 +13,9 @@
     # Use the following url to get the documentation of the APIs
         Swaggger Docs URL - http://localhost:8000/docs#/   
 
+    # Use the following url for load testing of concurrent users using locust
+    Swaggger Docs URL - http://localhost:8089/  
+
 
 # Design Decisions and Assumption
 
