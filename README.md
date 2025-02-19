@@ -16,6 +16,9 @@
     # Use the following url for load testing of concurrent users using locust
         Locust Load Testing URL - http://localhost:8089/  
 
+    Note: 
+        Will need to set up Postgress to test the application    
+
 
 # Design Decisions and Assumption
 
