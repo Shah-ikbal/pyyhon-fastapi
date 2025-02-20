@@ -3,6 +3,7 @@
     # Create a virtual environment and excute the following commands
         - python3 -m venv .venv
         - source venv/bin/activate
+        
 
     # Install the respective packages from requirements.txt file
         - pip install -r requirements.txt (pip3 incase of using pip3)
