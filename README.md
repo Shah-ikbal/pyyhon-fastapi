@@ -3,7 +3,7 @@
     # Create a virtual environment and excute the following commands
         - python3 -m venv .venv
         - source venv/bin/activate
-        
+
 
     # Install the respective packages from requirements.txt file
         - pip install -r requirements.txt (pip3 incase of using pip3)
@@ -127,7 +127,7 @@ Trade-offs:
 
         - Small to Medium Scale: The system is designed for small to medium-scale e-commerce platforms. For larger systems, a distributed message broker (e.g., RabbitMQ, Kafka) and a more robust database setup would be required.
         - Single Instance: The application assumes a single instance of the service. For high availability, multiple instances with load balancing would be needed.
-        - Simulated Processing Time: The 5-second delay in order processing is a simulation. In a real-world scenario, processing time would depend on the complexity of the order.
+        - Simulated Processing Time: The 1-second delay in order processing is a simulation. In a real-world scenario, processing time would depend on the complexity of the order.
         - No Authentication: The API does not include authentication or authorization. In a production system, this would be essential for security.
 
     #Future Improvements
