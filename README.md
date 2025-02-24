@@ -14,6 +14,9 @@
     # Use the following url to get the documentation of the APIs
         Swaggger Docs URL - http://localhost:8000/docs#/   
 
+    # Use the following command to run load test with locust
+        - locust -f locustfile.py
+
     # Use the following url for load testing of concurrent users using locust
         Locust Load Testing URL - http://localhost:8089/  
 
